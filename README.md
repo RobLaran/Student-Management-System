@@ -36,6 +36,7 @@
 # Database Schema:
 
 Entities:
+
 	User
 		- user_id (Primary key)
 		- username
