@@ -47,7 +47,7 @@ Entities:
 		- age
 		- address
 	query to database:
-        # create table for user
+        create table for user
 		create table user (
 			user_id int not null auto_increment,
             user_name varchar(255) not null,
@@ -61,7 +61,7 @@ Entities:
             primary key (user_id)
 		);
 
-        # add user 
+        add user 
         insert into user (user_name, password, email, date_of_birth, phone_number, gender, age, address)
         values ('rob', 'laran', 'laranrobelleney@gmail.com', '2001-11-05', '09064792965', 'male', 23, 'abgao, maasin city');
 
