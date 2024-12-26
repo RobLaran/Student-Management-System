@@ -60,13 +60,12 @@ Entities:
 		- course_code (Primary key)
 		- course_name
 		- description
-  Enrollment
+	Enrollment
 		- enrollment_id (Primary key)
 		- course_code (Foreign key)
 		- course_name (Foreign key)
 		- student_id (Foreign key)
 		- student_name (Foreign key)
-   
 	Report
 		- report_code (Primary key)
 		- course_code (Foreign key)
@@ -74,7 +73,6 @@ Entities:
 		- student_id (Foreign key)
 		- student_name (Foreign key)
 		- student_email (Foreign key)
-    
 
 
 
