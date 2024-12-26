@@ -2,31 +2,28 @@
 require "db/database.php";
 
 class UserAuthentication {
-    private $db;
-    private $user;
+    public $db;
 
     function __construct() {
         $this->db = new Database();
-        $this->user = null;
     }
 
     /* 
     * User login
     */
-    function verifyUsername($username, $email) {
-        if(isset($username)) {
-            $this->user = $this->db->fetchUser($username, $email);
-            if(isset($this->user)) {
-                return true;
-            } else {
-                $this->user = null;
-                return false;
-            }
-        }
+    function verifyUsername($username) {
+        return $this->checkUsername($username);
     }
 
-    function checkPassword($password) {
-        $hash = $this->user['password'];
+    function verifyEmail($username, $email) {
+        $id = $this->db->fetchUserID($username, $email);
+
+        return isset($id);
+    }
+
+    function checkPassword($username, $email, $password) {
+        $id = $this->db->fetchUserID($username, $email);
+        $hash = $this->db->fetchPassword($id);
 
         return $this->verifyPassword($password, $hash);
     }
@@ -35,12 +32,10 @@ class UserAuthentication {
         return password_verify($password, $hash);
     }
 
-    function verifyEmail($email) {
-        return $email == $this->user['email'];
-    }
+    function loginUser($username, $password, $email) {
+        $id = $this->db->fetchUserID($username, $email);
 
-    function loginUser() {
-
+        return $id;
     }
 
 
@@ -75,10 +70,10 @@ class UserAuthentication {
         }
     }
 
-    function createUser($username="NULL", $password="NULL", $email="NULL", $dateOfBirth="NULL", $phoneNumber="NULL", $gender="NULL", $age="NULL", $address="NULL") {
+    function createUser($username="NULL", $password="NULL", $email="NULL", $dateOfBirth="NULL", $phoneNumber="NULL", $gender="NULL", $address="NULL") {
         $user = array('username'=>$username, 'password'=>$password, 'email'=>$email,
                         'dateOfBirth'=>$dateOfBirth, 'phoneNumber'=>$phoneNumber, 'gender'=>$gender,
-                        'age'=>$age, 'address'=>$address);
+                        'address'=>$address);
 
         return $user;
     }
@@ -93,12 +88,6 @@ class UserAuthentication {
         $hash = password_hash($password, PASSWORD_DEFAULT);
 
         return $hash;
-    }
-
-    function dd($var) {
-        echo "<pre>";
-        var_dump($var);
-        echo "</pre>";
     }
 }
 
