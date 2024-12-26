@@ -1,7 +1,7 @@
 <?php
-
-    # create session and impelement login/logout functionalities
-    include "login.php"
+    session_start();
+    require "functions.php";
+    require "router.php";
 ?>
 
 

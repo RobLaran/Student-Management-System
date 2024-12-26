@@ -1,13 +1,17 @@
 # TODO
-    - create session and implement logout functionalities
-    - create queries to database for login functionalities 
+    - add student functionality
+    - add course functionality
+    - add enroll functionality
+    - add reports functionality
 
 # DONE
     - implemented user registration
     - implemented user login
-
-
-
+    - created queries to database for login functionalities 
+    - fixed login functionality
+    - organize file structures and php contents
+    - create session and implement logout functionalities
+    - create templates 
 
 
 Queries:
