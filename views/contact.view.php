@@ -6,7 +6,7 @@
     $heading = "Contact Us";
     require "partials/banner.php";
 ?>
-<main>
+<div class="contact-container">
     <p class="paragraph">
         Have questions or need assistance? Please feel free to reach out to us. We’d love to hear from you!
     </p>
@@ -29,7 +29,7 @@
     <p>Email: laranrobelleney@gmail.com</p>
     <p>Phone: 0906 479 2965</p>
     <p>Address: Panal Street, Abgao, Maasin City, Southern Leyte</p>
-</main>
+</div>
 
 
 <?php

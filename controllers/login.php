@@ -2,10 +2,13 @@
     $heading = "Login";
 
     require "views/login.view.php";
+    require "db/queries/user_queries.php";
     require "user_auth.php";
+    $config = require "config.php";
 
-    $auth = new UserAuthentication();
-    $db = new Database();
+    $db = new Database('root', 'darting1223', $config['database']);
+    $userQueries = new UserQueries($db);
+    $auth = new UserAuthentication($userQueries);
 
 
     if($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -25,7 +28,7 @@
         } else if(!$auth->checkPassword($username, $email, $password)) {
             echo "incorrect password";
         } else {
-            $id = $auth->db->fetchUserID($username, $email);
+            $id = $auth->query->fetchUserID($username, $email);
 
             $_SESSION['user_id'] = $id;
 

@@ -9,6 +9,9 @@
         "/login" => "controllers/login.php",
         "/logout" => "controllers/logout.php",
         "/register" => "controllers/register.php",
+        "/students" => "controllers/students.php",
+        "/students/edit" => "controllers/student-edit.php",
+
     ];
 
 
@@ -21,7 +24,13 @@
     }
 
     function abort($code=404) {
+        http_response_code($code);
         require "views/{$code}.php";
+        die();
+    }
+
+    function authorize($userid) {
+        return $userid == $_SESSION['user_id'] ? true : abort(403);
     }
 
     routeToController($uri, $routes);

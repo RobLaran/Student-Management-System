@@ -1,8 +1,8 @@
 # TODO
-    - add student functionality
-    - add course functionality
-    - add enroll functionality
-    - add reports functionality
+    - add the student functionality
+    - add the course functionality
+    - add the enroll functionality
+    - add the reports functionality
 
 # DONE
     - implemented user registration
@@ -17,47 +17,70 @@
 Queries:
 
 query to database:
-        create table for user
-		create table user (
-			user_id int not null auto_increment,
-            user_name varchar(255) not null,
-            password varchar(255) not null,
-            email varchar(255) not null,
-            date_of_birth date,
-            phone_number bigint,
-            gender char(1) not null,
-            age int,
-            address varchar(255),
-            primary key (user_id)
-		);
+    * USER
+        -create table for user
+            create table user (
+                user_id int not null auto_increment,
+                user_name varchar(255) not null,
+                password varchar(255) not null,
+                email varchar(255) not null,
+                date_of_birth date,
+                phone_number bigint,
+                gender char(1) not null,
+                address varchar(255),
+                primary key (user_id)
+            );
 
-        add user 
-        insert into user (user_name, password, email, date_of_birth, phone_number, gender, age, address)
-        values ('rob', 'laran', 'laranrobelleney@gmail.com', '2001-11-05', '09064792965', 'male', 23, 'abgao, maasin city');
+        -add user 
+            query = "INSERT INTO user (user_name, password, email, date_of_birth, phone_number, gender, address)  
+                VALUES (?, ?, ?, ?, ?, ?, ?)"
 
-        insert into user (user_name, password, email, date_of_birth, phone_number, gender, age, address)
-        values ('blanche', 'javier', 'blanchejavier@gmail.com', '1999-01-02', '09366417934', 'female', 25, 'abgao, maasin city');
+            SAMPLES
+            insert into user (user_name, password, email, date_of_birth, phone_number, gender, age, address)
+            values ('rob', 'laran', 'laranrobelleney@gmail.com', '2001-11-05', '09064792965', 'male', 23, 'abgao, maasin city');
+
+            insert into user (user_name, password, email, date_of_birth, phone_number, gender, age, address)
+            values ('blanche', 'javier', 'blanchejavier@gmail.com', '1999-01-02', '09366417934', 'female', 25, 'abgao, maasin city');
+
+    * STUDENT
+        -create table for student
+            create table student (
+                student_id int not null auto_increment,
+                student_first_name varchar(255) not null,
+                student_last_name varchar(255) not null,
+                student_email varchar(255) not null,
+                date_of_birth date,
+                phone_number bigint,
+                gender varchar(25) not null,
+                address varchar(255),
+                primary key (student_id)
+            );
+
+        -add student query
+            query = "INSERT INTO student (user_id, student_first_name, student_last_name, student_email, date_of_birth, phone_number, gender, address)  
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+
+            SAMPLES
+            insert into student (user_id, student_first_name, student_last_name, student_email, date_of_birth,        phone_number, gender, address)
+            values (29, 'Bruno', 'Boy', 'bb@gmail.com', '2004-08-26',
+            NULL, 'male', 'Abgao, Maasin City');
+
+            insert into student (user_id, student_first_name, student_last_name, student_email, date_of_birth,        phone_number, gender, address)
+            values (29, 'Chappy', 'White', 'chap@gmail.com', '2008-05-14',
+            NULL, 'male', 'Combado, Maasin City');
+
+            insert into student (user_id, student_first_name, student_last_name, student_email, date_of_birth,        phone_number, gender, address)
+            values (32, 'Puss', 'Kat', 'kiten@gmail.com', '2003-07-02',
+            NULL, 'female', 'Lib-og, Maasin City');
+
 
 query to database:
-		create table student (
-			student_id int not null auto_increment,
-            student_name varchar(255) not null,
-            student_email varchar(255) not null,
-            date_of_birth date,
-            phone_number bigint,
-            gender char(1) not null,
-            age int,
-            address varchar(255),
-            primary key (student_id)
-		);
-
-query to database:
-create table course (
-    course_code int not null auto_increment,
-    course_name varchar(255) not null,
-    description mediumtext,
-    primary key (course_code)
-);
+    create table course (
+        course_code int not null auto_increment,
+        course_name varchar(255) not null,
+        description mediumtext,
+        primary key (course_code)
+    );
 
 query to database:
     create table enrollment (
