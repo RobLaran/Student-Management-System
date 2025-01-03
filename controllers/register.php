@@ -16,7 +16,7 @@
         $user = $auth->createUser($_POST["username"], $_POST["password"], $_POST["email"],
                                 $_POST["dateOfBirth"], $_POST["phoneNumber"],
                                 $_POST["gender"], $_POST["address"]
-            );
+        );
 
         if($auth->checkUsername($user['username'])) {
             echo "<br>username taken";

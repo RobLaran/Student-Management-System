@@ -8,7 +8,7 @@
 ?>
 
 <main>
-    <form method="POST">
+    <form method="POST" class="form-container">
         <label for="username">Username: </label>
         <input type="text" name="username" id="username" required>
         <br>

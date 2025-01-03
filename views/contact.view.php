@@ -12,7 +12,7 @@
     </p>
 
     <h2>Send Us a Message</h2>
-    <form method="POST" action="process_contact.php">
+    <form method="POST" action="process_contact.php" class="form-container">
         <label for="name">Your Name:</label>
         <input type="text" name="name" id="name" required><br><br>
 

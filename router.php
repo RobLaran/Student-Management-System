@@ -10,7 +10,9 @@
         "/logout" => "controllers/logout.php",
         "/register" => "controllers/register.php",
         "/students" => "controllers/students.php",
+        "/students/add" => "controllers/student-add.php",
         "/students/edit" => "controllers/student-edit.php",
+        "/students/remove" => "controllers/student-remove.php",
 
     ];
 

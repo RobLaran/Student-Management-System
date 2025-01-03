@@ -1,5 +1,4 @@
 # TODO
-    - add the student functionality
     - add the course functionality
     - add the enroll functionality
     - add the reports functionality
@@ -12,6 +11,7 @@
     - organize file structures and php contents
     - create session and implement logout functionalities
     - create templates 
+    - add the student functionality
 
 
 Queries:
@@ -63,7 +63,7 @@ query to database:
             SAMPLES
             insert into student (user_id, student_first_name, student_last_name, student_email, date_of_birth,        phone_number, gender, address)
             values (29, 'Bruno', 'Boy', 'bb@gmail.com', '2004-08-26',
-            NULL, 'male', 'Abgao, Maasin City');
+            NULL, 'male[0-9]{3} [0-9]{4}', 'Abgao, Maasin City');
 
             insert into student (user_id, student_first_name, student_last_name, student_email, date_of_birth,        phone_number, gender, address)
             values (29, 'Chappy', 'White', 'chap@gmail.com', '2008-05-14',

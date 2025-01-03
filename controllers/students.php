@@ -8,5 +8,4 @@
     $students = $studentQuery->fetchAll($_SESSION['user_id']);
 
     require "views/students.view.php";
-
 ?>

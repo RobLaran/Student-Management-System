@@ -76,9 +76,13 @@ class UserAuthentication {
     }
 
     function createUser($username="NULL", $password="NULL", $email="NULL", $dateOfBirth="NULL", $phoneNumber="NULL", $gender="NULL", $address="NULL") {
-        $user = array('username'=>$username, 'password'=>$password, 'email'=>$email,
-                        'dateOfBirth'=>$dateOfBirth, 'phoneNumber'=>$phoneNumber, 'gender'=>$gender,
-                        'address'=>$address);
+        $user = array('username'=>$username, 
+                    'password'=>$password, 
+                    'email'=>$email,
+                    'dateOfBirth'=>$dateOfBirth, 
+                    'phoneNumber'=>$phoneNumber, 
+                    'gender'=>$gender,
+                    'address'=>$address);
 
         return $user;
     }

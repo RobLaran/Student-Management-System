@@ -3,51 +3,6 @@
     require "partials/head.php";
     require "partials/nav.php";
 ?>
-    <div class="form-container">
-        <h1>Add Student</h1>
-        <form action="process_add_student.php" method="POST" id="student-form">
-           <div class="form-wrapper">
-                    <!-- Student Name -->
-                <label for="first-name">First Name:</label>
-                <input type="text" id="first-name" name="first-name" placeholder="Enter first name" required>
-
-                <label for="last-name">Last Name:</label>
-                <input type="text" id="last-name" name="last-name" placeholder="Enter last name" required>
-                
-                <!-- Email -->
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter email address" required>
-
-                <!-- Date of birth -->
-                <label for="date-of-birth">Date of birth :</label>
-                <input type="date" id="date of birth" name="date of birth" min="1" max="100" placeholder="Enter date of birth" required>
-                
-                <label for="phoneNumber">Phone number: </label>
-                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Enter phone number" >
-
-                <fieldset style="display: inline">
-                    <legend>Select Gender: </legend>
-                    <input type="radio" name="gender" id="male" value="male" checked>
-                    <label for="male">Male</label>
-                    <br>
-                    <input type="radio" name="gender" id="female" value="female">
-                    <label for="female">Female</label>
-                    <br>
-                    <input type="radio" name="gender" id="other" value="other">
-                    <label for="other">Other</label>
-                </fieldset>
-
-                <label for="address">Address:</label>
-                <input type="text" name="address" id="address" placeholder="Enter address">
-           </div>
-
-            <!-- Submit Button -->
-             <div id="add-student-wrapper">
-                <button type="submit" id="add-student-button">Add Student</button>
-             </div>
-            
-        </form>
-    </div>
 
     <div class="table-container">
         <h1>Student List</h1>
@@ -72,15 +27,18 @@
                                 <tr>
 
                                 <?php foreach($student as $key => $value): ?>
-                                    <?php if($key == 'user_id') {
-                                        echo "
+                                    <?php if($key == 'user_id'): ?>
                                         <td>
-                                        <a href=\"/students/edit?id={$student['student_id']}\">EDIT</a> <br>
-                                        <a href=\"#\">DELETE</a>
-                                        </td>";
-
-                                        break;
-                                    } ?>
+                                        <form action="students/edit" method="GET">
+                                            <button value="<?= $student['student_id'] ?>" name="id" class="action-button edit">EDIT</button>
+                                        </form>
+                                        <form action="students/remove" method="GET">
+                                            <button value="<?= $student['student_id'] ?>" name="id" class="action-button delete">DELETE</button>
+                                        </form>
+                                        <!-- <a href="/students/remove?id={$student['student_id']}">DELETE</a> -->
+                                        </td>
+                                        <?php break; ?>
+                                    <?php endif ?>
 
                                         <td><?= $value ?></td>
 
@@ -94,7 +52,10 @@
         </div>
     </div>
 
-    
+    <div class="rd-add-student-container">
+        <a href="/students/add" role="button" class="rd-add-student">Add new student</a>        
+    </div>
+
 <?php
     require "partials/footer.php";
 ?>

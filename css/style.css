@@ -101,7 +101,7 @@ header {
     text-align: center;
 }
 
-form {
+.form-container {
     background: white;
     padding: 20px;
     border-radius: 5px;
@@ -126,5 +126,26 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.alert {
+    padding: 20px;
+    /* background-color: #04AA6D; */
+    color: white;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
 
 
