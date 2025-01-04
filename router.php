@@ -13,6 +13,7 @@
         "/students/add" => "controllers/student-add.php",
         "/students/edit" => "controllers/student-edit.php",
         "/students/remove" => "controllers/student-remove.php",
+        "/courses" => "controllers/courses.php",
 
     ];
 

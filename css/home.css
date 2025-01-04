@@ -1,7 +1,35 @@
-#home .user {
-    width: 180px;
+/* 
+* Styles for the small section of two buttons for logging in and registration *
+*/
+.authentication-section {
+    width: 280px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
+
+.authentication-section .btn{
+    background-color: rgb(67, 93, 142);
+    border: 1px solid transparent;
+    border-radius: .75rem;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+    width: 80px;
+    padding: 10px 0px 10px 0px;
+}
+
+.authentication-section .btn:hover {
+    background-color: #374151;
+}
+
+.authentication-section .btn:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+

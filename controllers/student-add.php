@@ -22,7 +22,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $status = "added";
 
+    if(!empty($error)) {
+        $error = "";
+    }
     foreach($student as $key=>$value) {
+        if($key == "Phone number" || $key == "Address") {
+            continue;
+        }
+
         if(empty($value)) {
             $status ="error";
             $error = $key . " is required.";
@@ -30,7 +37,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    if($status == "added") {
+    if($status == "added" && empty($error)) {
         $studentQueries->addStudent($student, $_SESSION['user_id']);
     }
 }

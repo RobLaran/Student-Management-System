@@ -1,40 +1,53 @@
 <?php
     $heading = "Login";
 
-    require "views/login.view.php";
     require "db/queries/user_queries.php";
     require "user_auth.php";
     $config = require "config.php";
-
+    
     $db = new Database('root', 'darting1223', $config['database']);
     $userQueries = new UserQueries($db);
     $auth = new UserAuthentication($userQueries);
-
-
+    
+    $status = "";
+    $error = "";
+    
     if($_SERVER['REQUEST_METHOD'] == "POST") {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $confirmPassword = $_POST['confirmPassword'];
-        $email = $_POST['email'];
-        
-        
+        $username = cleanStr($_POST['username']);
+        $password = cleanStr($_POST['password']);
+        $confirmPassword = cleanStr($_POST['confirmPassword']);
+        $email = cleanStr($_POST['email']);
+
         // login verification
-        if(!$auth->verifyUsername($username)) {
-            echo "wrong username";
+        if(empty($username)) {
+            $status = "error";
+            $error= "Username is empty.";
+        } else if(!$auth->verifyUsername($username)) {
+            $status = "error";
+            $error= "Wrong username.";
         } else if(!$auth->verifyEmail($username, $email)) {
-            echo "incorrect email";
+            $status = "error";
+            $error= "Invalid email.";
         } else if(!$auth->matchPassword($password, $confirmPassword)) {
-            echo "password does not match";
+            $status = "error";
+            if(empty($password)) {
+                $error = "Empty password.";
+            } else {
+                $error= "Password mismatched.";
+            }
         } else if(!$auth->checkPassword($username, $email, $password)) {
-            echo "incorrect password";
+            $status = "error";
+            $error= "Incorrect password.";
         } else {
             $id = $auth->query->fetchUserID($username, $email);
-
+            
             $_SESSION['user_id'] = $id;
-
+            $_SESSION['success_message_displayed'] = true;
+            
             header("Location: /home");
             exit();
         }
     }
-
+    
+    require "views/login.view.php";
 ?>

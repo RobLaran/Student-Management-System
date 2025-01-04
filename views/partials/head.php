@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/students.css">
+    <link rel="stylesheet" href="/css/courses.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/register.css">
     <title><?php echo $title;?></title>
 </head>
 <body>
