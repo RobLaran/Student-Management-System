@@ -26,10 +26,10 @@
                             <?php if($key == 'user_id'): ?>
                                 <td class="course action-buttons-wrapper">
                                     <form action="courses/edit" method="GET">
-                                        <button value="<?=  "" // $course['course_code'] ?>" name="id" class="course action-button edit">EDIT</button>
+                                        <button value="<?= $course['course_code'] ?>" name="id" class="course action-button edit">EDIT</button>
                                     </form>
                                     <form action="courses/remove" method="GET">
-                                        <button value="<?= "" // $course['course_code''] ?>" name="id" class="course action-button delete">DELETE</button>
+                                        <button value="<?= $course['course_code'] ?>" name="id" class="course action-button delete">DELETE</button>
                                     </form>
                                 </td>
                                 <?php break; ?>

@@ -9,11 +9,14 @@
         "/login" => "controllers/login.php",
         "/logout" => "controllers/logout.php",
         "/register" => "controllers/register.php",
-        "/students" => "controllers/students.php",
-        "/students/add" => "controllers/student-add.php",
-        "/students/edit" => "controllers/student-edit.php",
-        "/students/remove" => "controllers/student-remove.php",
-        "/courses" => "controllers/courses.php",
+        "/students" => "controllers/students/students.php",
+        "/students/add" => "controllers/students/student-add.php",
+        "/students/edit" => "controllers/students/student-edit.php",
+        "/students/remove" => "controllers/students/student-remove.php",
+        "/courses" => "controllers/course/courses.php",
+        "/courses/add" => "controllers/course/course-add.php",
+        "/courses/remove" => "controllers/course/course-remove.php",
+        "/courses/edit" => "controllers/course/course-edit.php",
 
     ];
 

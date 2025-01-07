@@ -6,5 +6,8 @@
     $courseQuery = new CourseQueries($db);
 
     $courses = $courseQuery->fetchAll($_SESSION['user_id']);
+
+
+    
     require "views/courses.view.php";
 ?>

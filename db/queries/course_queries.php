@@ -14,72 +14,55 @@ class CourseQueries {
         return !empty($result) ? $result : null; 
     }
 
-    // function fetchStudent($id) {
-    //     $query = "SELECT * FROM student where student_id = ?";
+    function fetchCourse($code) {
+        $query = "SELECT * FROM course where course_code = ?";
 
-    //     $result = $this->database->query($query, [$id])->fetch();
+        $result = $this->database->query($query, [$code])->fetch();
 
-    //     return !empty($result) ? $result : null;
-    // }
+        return !empty($result) ? $result : null;
+    }
 
-    // function updateStudent($student, $userid) {
-    //     $query = "UPDATE student
-    //         SET student_first_name = ?, 
-    //             student_last_name = ?, 
-    //             student_email = ?, 
-    //             date_of_birth = ?, 
-    //             phone_number = ?, 
-    //             gender = ?, 
-    //             address = ?
-    //         WHERE student_id = ? and user_id = ?";
+    function updateCourse($course, $userid) {
+        $query = "UPDATE course
+            SET course_name = ?, 
+                description = ?
+            WHERE course_code = ? and user_id = ?";
 
-    //     $params = [
-    //         $student['First name'], 
-    //         $student['Last name'],
-    //         $student['Email'],
-    //         $student['Date of birth'],
-    //         $student['Phone number'],
-    //         $student['Gender'],
-    //         $student['Address'],
-    //         $student['Student ID'],
-    //         $userid
-    //     ];
+        $params = [
+            $course['course_name'], 
+            $course['description'],
+            $course['course_code'], 
+            $userid
+        ];
 
-    //     return $this->database->query($query, $params);
-    // }
+        return $this->database->query($query, $params);
+    }
 
-    // function addStudent($student, $userid) {
-    //     $query = "INSERT INTO student 
-    //         (user_id, student_first_name, student_last_name, 
-    //         student_email, date_of_birth, phone_number, gender, address)  
-    //         VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    function addCourse($course, $userid) {
+        $query = "INSERT INTO course (user_id, course_name, description)  
+            VALUES (?, ?, ?)";
 
-    //     $params = [
-    //         $userid,
-    //         $student['First name'], 
-    //         $student['Last name'],
-    //         $student['Email'],
-    //         $student['Date of birth'],
-    //         $student['Phone number'],
-    //         $student['Gender'],
-    //         $student['Address'] 
-    //     ];
+        $params = [
+            $userid,
+            $course['course_name'], 
+            $course['description'],
+        ];
 
-    //     $this->database->query($query, $params);
-    // }
+        $this->database->query($query, $params);
+    }
 
-    // function removeStudent($student_id, $user_id) {
-    //     $query = "DELETE FROM student 
-    //         WHERE student_id = ? and user_id = ?       
-    //     ";
+    function removeCourse($code, $user_id) {
+        $query = "DELETE FROM course 
+            WHERE course_code = ? and user_id = ?       
+        ";
 
-    //     $params = [
-    //         $student_id,
-    //         $user_id
-    //     ];
+        $params = [
+            $code,
+            $user_id
+        ];
 
-    //     $this->database->query($query, $params);
-    // }
+        $this->database->query($query, $params);
+    }
 }
 
 ?>

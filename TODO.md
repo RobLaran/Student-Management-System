@@ -1,9 +1,4 @@
 # TODO
-    - add the course functionality
-        - construct the course queries
-        - construct how to add a course
-        - construct how to delete a course
-        - construct how to edit a course
     - add the enroll functionality
     - add the reports functionality
 
@@ -16,6 +11,7 @@
     - create session and implement logout functionalities
     - create templates 
     - add the student functionality
+    - add the course functionality
 
 
 Queries:
@@ -78,24 +74,24 @@ query to database:
             NULL, 'female', 'Lib-og, Maasin City');
 
 
-query to database:
-    - create table course
-        create table course (
-            course_code int not null auto_increment,
-            course_name varchar(255) not null,
-            description mediumtext,
-            user_id int,
-            primary key (course_code),
-            foreign key (user_id) references user(user_id)
-        );
+    * COURSE
+        - create table course
+            create table course (
+                course_code int not null auto_increment,
+                course_name varchar(255) not null,
+                description mediumtext,
+                user_id int,
+                primary key (course_code),
+                foreign key (user_id) references user(user_id)
+            );
 
-    -add course query
-        query = "INSERT INTO course (user_id, course_name, description)  
-        VALUES (?, ?, ?)"
+        -add course query
+            query = "INSERT INTO course (user_id, course_name, description)  
+            VALUES (?, ?, ?)"
 
-        SAMPLES
-        INSERT INTO course (user_id, course_name, description)  
-        VALUES (32, "Criminology", "Ratatatat and Arrest");
+            SAMPLES
+            INSERT INTO course (user_id, course_name, description)  
+            VALUES (32, "Criminology", "Ratatatat and Arrest");
 
 query to database:
     create table enrollment (

@@ -25,6 +25,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(!empty($error)) {
         $error = "";
     }
+    
     foreach($student as $key=>$value) {
         if($key == "Phone number" || $key == "Address") {
             continue;

@@ -8,7 +8,10 @@
     }
 
     function cleanStr($value) {
-        return strlen(htmlspecialchars(trim($value))) != 0 ? htmlspecialchars(trim($value)) : NULL;
+        $value = trim($value);
+        $value = htmlspecialchars($value);
+
+        return $value ?? NULL;
     }
 
     function isURL($URL) {
