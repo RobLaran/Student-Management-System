@@ -17,6 +17,8 @@
         "/courses/add" => "controllers/course/course-add.php",
         "/courses/remove" => "controllers/course/course-remove.php",
         "/courses/edit" => "controllers/course/course-edit.php",
+        "/enroll" => "controllers/enroll.php",
+        "/reports" => "controllers/reports.php",
 
     ];
 

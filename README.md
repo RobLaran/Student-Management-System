@@ -64,6 +64,9 @@ Entities:
 		- user_id (Foreign key)
 	Enrollment
 		- enrollment_id (Primary key)
+		- year int
+		- semester int
+		- enrolled_date
 		- course_code (Foreign key)
 		- course_name (Foreign key)
 		- student_id (Foreign key)

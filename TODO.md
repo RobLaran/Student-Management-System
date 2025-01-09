@@ -1,7 +1,5 @@
 # TODO
-    - add the enroll functionality
-    - add the reports functionality
-
+    
 # DONE
     - implemented user registration
     - implemented user login
@@ -12,7 +10,8 @@
     - create templates 
     - add the student functionality
     - add the course functionality
-
+    - add the enroll functionality
+    - add the reports functionality
 
 Queries:
 
@@ -93,20 +92,40 @@ query to database:
             INSERT INTO course (user_id, course_name, description)  
             VALUES (32, "Criminology", "Ratatatat and Arrest");
 
-query to database:
-    create table enrollment (
-        enrollment_id int not null auto_increment,
-        course_code int,
-        course_name varchar(255),
-        student_id int,
-        student_name varchar(255),
-        primary key (enrollment_id),
-        foreign key (course_code) references course(course_code),
-        foreign key (course_name) references course(course_name),
-        foreign key (student_id) references student(student_id),
-        foreign key (student_name) references student(student_name),
-    );
-query to database:
+    * Enrollment
+        create table enrollment (
+            enrollment_id int not null auto_increment,
+            course_code int,
+            student_id int,
+            year int not null,
+            semester int not null,
+            date_enrolled date not null,
+            primary key (enrollment_id),
+            foreign key (course_code) references course(course_code),
+            foreign key (student_id) references student(student_id)
+        );
+
+        - enroll student query
+            query = "INSERT INTO enrollemnt (
+                student_id, course_code, year, semester, date_enrolled)  
+            VALUES (?, ?, ?, ?, ?)"
+
+        - unenroll student query
+            query = "DELETE FROM enrollemnt 
+                    WHERE enrollment_id = ?"
+
+        - fetch all enrolled students query
+            query = "SELECT * FROM enrollemnt"
+
+        - fetch an enrolled student query
+            query = "SELECT * FROM enrollment
+                    WHERE student_id = ? AND course_code = ?"
+
+        - fetch enrollment id query
+            query = "SELECT enrollment_id FROM enrollment
+                    WHERE student_id = ? AND course_code = ?"
+
+    * Report
         create table report (
             report_code int not null auto_increment,
             course_code int,
