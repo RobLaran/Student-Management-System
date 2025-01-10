@@ -9,8 +9,8 @@
     $courseQueries = new CourseQueries($db);
     $enrollQueries = new EnrollmentQueries($db);
 
-    $students = $studentQueries->fetchAll($_SESSION['user_id']);
-    $courses = $courseQueries->fetchAll($_SESSION['user_id']);
+    $students = $studentQueries->fetchAll();
+    $courses = $courseQueries->fetchAll();
     $date_now = date("Y-m-d");
 
     $status = "";

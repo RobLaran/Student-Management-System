@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             "description"=>$description
         );
     
-        $courseQueries->addCourse($new_course, $_SESSION['user_id']);
+        $courseQueries->addCourse($new_course);
         $status = "added";
     }
 

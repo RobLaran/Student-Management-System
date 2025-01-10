@@ -7,7 +7,7 @@ $studentQueries = new StudentQueries($db);
 
 
 if(isset($_GET['id'])) {
-    $studentQueries->removeStudent($_GET['id'], $_SESSION['user_id']);
+    $studentQueries->removeStudent($_GET['id']);
 
     header("Location: /students");
     exit();

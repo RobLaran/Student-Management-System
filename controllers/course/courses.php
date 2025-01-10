@@ -5,7 +5,7 @@
     $db = new Database('root', 'darting1223', $config['database']);
     $courseQuery = new CourseQueries($db);
 
-    $courses = $courseQuery->fetchAll($_SESSION['user_id']);
+    $courses = $courseQuery->fetchAll();
 
 
     

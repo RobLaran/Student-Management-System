@@ -23,8 +23,10 @@
                         <tr class="course-table-data">
 
                         <?php foreach($course as $key => $value): ?>
-                            <?php if($key == 'user_id'): ?>
-                                <td class="course action-buttons-wrapper">
+                            <td><?= $value ?></td>
+                        <?php endforeach; ?>
+                        
+                            <td class="course action-buttons-wrapper">
                                     <form action="courses/edit" method="GET">
                                         <button value="<?= $course['course_code'] ?>" name="id" class="course action-button edit">EDIT</button>
                                     </form>
@@ -32,12 +34,6 @@
                                         <button value="<?= $course['course_code'] ?>" name="id" class="course action-button delete">DELETE</button>
                                     </form>
                                 </td>
-                                <?php break; ?>
-                            <?php endif ?>
-
-                            <td><?= $value ?></td>
-
-                        <?php endforeach; ?>
 
                         </tr>
                     <?php endforeach; ?>

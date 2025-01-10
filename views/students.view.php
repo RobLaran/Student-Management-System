@@ -26,22 +26,17 @@
                         <tr class="table-data">
 
                         <?php foreach($student as $key => $value): ?>
-                            <?php if($key == 'user_id'): ?>
-                                <td>
+                            <td><?= $value ?></td>
+                        <?php endforeach; ?>
+
+                            <td>
                                 <form action="students/edit" method="GET">
                                     <button value="<?= $student['student_id'] ?>" name="id" class="student action-button edit">EDIT</button>
                                 </form>
                                 <form action="students/remove" method="GET">
                                     <button value="<?= $student['student_id'] ?>" name="id" class="student action-button delete">DELETE</button>
                                 </form>
-                                <!-- <a href="/students/remove?id={$student['student_id']}">DELETE</a> -->
-                                </td>
-                                <?php break; ?>
-                            <?php endif ?>
-
-                            <td><?= $value ?></td>
-
-                        <?php endforeach; ?>
+                            </td>
 
                         </tr>
                     <?php endforeach; ?>

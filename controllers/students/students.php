@@ -5,7 +5,7 @@
     $db = new Database('root', 'darting1223', $config['database']);
     $studentQuery = new StudentQueries($db);
 
-    $students = $studentQuery->fetchAll($_SESSION['user_id']);
+    $students = $studentQuery->fetchAll();
     
     require "views/students.view.php";
 ?>

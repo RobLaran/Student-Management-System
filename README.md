@@ -56,12 +56,10 @@ Entities:
 		- gender
 		- age
 		- address
-		- user_id (Foreign key)
 	Course
 		- course_code (Primary key)
 		- course_name
 		- description
-		- user_id (Foreign key)
 	Enrollment
 		- enrollment_id (Primary key)
 		- year int

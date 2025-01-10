@@ -33,7 +33,7 @@
         // }
 
         if($status == "updated") {
-            $studentQueries->updateStudent($updated_student, $_SESSION['user_id']);
+            $studentQueries->updateStudent($updated_student);
             $student = $studentQueries->fetchStudent($_GET['id']);
         }
 

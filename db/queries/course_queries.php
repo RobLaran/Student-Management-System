@@ -6,10 +6,10 @@ class CourseQueries {
         $this->database = $database;
     }
 
-    function fetchAll($userid) {
-        $query = "SELECT * FROM course where user_id = ?";
+    function fetchAll() {
+        $query = "SELECT * FROM course";
 
-        $result = $this->database->query($query, [$userid])->fetchAll();
+        $result = $this->database->query($query)->fetchAll();
 
         return !empty($result) ? $result : null; 
     }
@@ -22,43 +22,40 @@ class CourseQueries {
         return !empty($result) ? $result : null;
     }
 
-    function updateCourse($course, $userid) {
+    function updateCourse($course) {
         $query = "UPDATE course
             SET course_name = ?, 
                 description = ?
-            WHERE course_code = ? and user_id = ?";
+            WHERE course_code = ?";
 
         $params = [
             $course['course_name'], 
             $course['description'],
-            $course['course_code'], 
-            $userid
+            $course['course_code'] 
         ];
 
         return $this->database->query($query, $params);
     }
 
-    function addCourse($course, $userid) {
-        $query = "INSERT INTO course (user_id, course_name, description)  
-            VALUES (?, ?, ?)";
+    function addCourse($course) {
+        $query = "INSERT INTO course (course_name, description)  
+            VALUES (?, ?)";
 
         $params = [
-            $userid,
             $course['course_name'], 
-            $course['description'],
+            $course['description']
         ];
 
         $this->database->query($query, $params);
     }
 
-    function removeCourse($code, $user_id) {
+    function removeCourse($code) {
         $query = "DELETE FROM course 
-            WHERE course_code = ? and user_id = ?       
+            WHERE course_code = ?     
         ";
 
         $params = [
-            $code,
-            $user_id
+            $code
         ];
 
         $this->database->query($query, $params);

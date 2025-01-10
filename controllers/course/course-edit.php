@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             "course_code"=>$_GET['id']
         );
     
-        $courseQueries->updateCourse($course, $_SESSION['user_id']);
+        $courseQueries->updateCourse($course);
         $course = $courseQueries->fetchCourse($_GET['id']);
 
         $status = "updated";

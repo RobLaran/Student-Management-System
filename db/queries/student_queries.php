@@ -6,10 +6,10 @@ class StudentQueries {
         $this->database = $database;
     }
 
-    function fetchAll($userid) {
-        $query = "SELECT * FROM student where user_id = ?";
+    function fetchAll() {
+        $query = "SELECT * FROM student";
 
-        $result = $this->database->query($query, [$userid])->fetchAll();
+        $result = $this->database->query($query)->fetchAll();
 
         return !empty($result) ? $result : null; 
     }
@@ -22,7 +22,7 @@ class StudentQueries {
         return !empty($result) ? $result : null;
     }
 
-    function updateStudent($student, $userid) {
+    function updateStudent($student) {
         $query = "UPDATE student
             SET student_first_name = ?, 
                 student_last_name = ?, 
@@ -31,7 +31,7 @@ class StudentQueries {
                 phone_number = ?, 
                 gender = ?, 
                 address = ?
-            WHERE student_id = ? and user_id = ?";
+            WHERE student_id = ?";
 
         $params = [
             $student['First name'], 
@@ -41,21 +41,19 @@ class StudentQueries {
             $student['Phone number'],
             $student['Gender'],
             $student['Address'],
-            $student['Student ID'],
-            $userid
+            $student['Student ID']
         ];
 
         return $this->database->query($query, $params);
     }
 
-    function addStudent($student, $userid) {
+    function addStudent($student) {
         $query = "INSERT INTO student 
-            (user_id, student_first_name, student_last_name, 
+            (student_first_name, student_last_name, 
             student_email, date_of_birth, phone_number, gender, address)  
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         $params = [
-            $userid,
             $student['First name'], 
             $student['Last name'],
             $student['Email'],
@@ -68,14 +66,13 @@ class StudentQueries {
         $this->database->query($query, $params);
     }
 
-    function removeStudent($student_id, $user_id) {
+    function removeStudent($student_id) {
         $query = "DELETE FROM student 
-            WHERE student_id = ? and user_id = ?       
+            WHERE student_id = ?      
         ";
 
         $params = [
-            $student_id,
-            $user_id
+            $student_id
         ];
 
         $this->database->query($query, $params);

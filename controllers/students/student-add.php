@@ -39,7 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if($status == "added" && empty($error)) {
-        $studentQueries->addStudent($student, $_SESSION['user_id']);
+        $studentQueries->addStudent($student);
     }
 }
 

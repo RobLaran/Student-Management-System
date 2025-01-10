@@ -7,7 +7,7 @@ $courseQueries = new CourseQueries($db);
 
 
 if(isset($_GET['id'])) {
-    $courseQueries->removeCourse($_GET['id'], $_SESSION['user_id']);
+    $courseQueries->removeCourse($_GET['id']);
 
     header("Location: /courses");
     exit();
