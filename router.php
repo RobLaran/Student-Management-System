@@ -20,6 +20,7 @@
         "/enroll" => "controllers/enroll.php",
         "/reports" => "controllers/reports.php",
         "/profile" => "controllers/profile.php",
+        "/profile/change-password" => "controllers/change-password.php",
 
     ];
 

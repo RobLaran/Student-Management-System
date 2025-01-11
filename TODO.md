@@ -17,6 +17,8 @@
     - add the reports functionality
     - on delete cascade that associates with student data
     - construct the profile feature and its design
+    - profile: add change password functionality
+
 
 Queries:
 

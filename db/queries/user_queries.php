@@ -93,17 +93,30 @@ class UserQueries {
             address = ?
         WHERE user_id = ?";
 
-    $params = [
-        $user['user_name'], 
-        $user['email'],
-        $user['phone_number'],
-        $user['date_of_birth'],
-        $user['gender'],
-        $user['address'],
-        $id
-    ];
+        $params = [
+            $user['user_name'], 
+            $user['email'],
+            $user['phone_number'],
+            $user['date_of_birth'],
+            $user['gender'],
+            $user['address'],
+            $id
+        ];
 
-    return $this->database->query($query, $params);
+        return $this->database->query($query, $params);
+    }
+
+    function updatePassword($password, $id) {
+        $query = "UPDATE user
+        SET password = ?
+        WHERE user_id = ?";
+
+        $params = [
+            $password,
+            $id
+        ];
+
+        return $this->database->query($query, $params);
     }
 }
 ?>

@@ -6,6 +6,7 @@
     $heading = "Welcome to the Student Management System";
     require "partials/banner.php";
 ?>
+
 <?php if(isset($_SESSION['user_id']) && isset($_SESSION['success_message_displayed'])): ?>
     <div class="alert" style="background-color: #04AA6D;">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 

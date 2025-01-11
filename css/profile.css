@@ -1,14 +1,27 @@
 .profile.form-container {
     width: 600px;
     height: 470px;
-    margin: 20px 0 20px 0;
+    margin: 5px 0 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.profile.form-wrapper {
+.change-password.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.change-password.form-container {
+    width: 600px;
+    height: 250px;
+    margin: 5px 0 20px 0;
+}
+
+.profile.form-wrapper, .change-password.form-wrapper {
     outline: 1px solid #fff;
     width: 100%;
     height: 100%;
@@ -20,5 +33,9 @@
 .profile-submit-input{
     padding: 10px;
     margin-top: 20px
+}
+
+.profile-submit-input.change-password {
+    margin-top: 50px;
 }
 
