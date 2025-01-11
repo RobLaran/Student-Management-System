@@ -97,4 +97,10 @@
 
 </main>
 
+<div class="unenroll-btn-container">
+    <div class="unenroll-btn-wrapper">
+        <a href="/unenroll" class="unenroll-btn">Unenroll</a>
+    </div>
+</div>
+
 <?php require "partials/footer.php"; ?>

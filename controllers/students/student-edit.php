@@ -24,14 +24,6 @@
         
         $status = "updated";
 
-        // foreach($updated_student as $key=>$value) {
-        //     if(empty($value) and $key != 'Student ID') {
-        //         $status ="error";
-        //         $error = $key . " is required.";
-        //         break;
-        //     }
-        // }
-
         if($status == "updated") {
             $studentQueries->updateStudent($updated_student);
             $student = $studentQueries->fetchStudent($_GET['id']);
@@ -39,11 +31,5 @@
 
     }
     
-    if($student != null) {
-        if(authorize($student['user_id'])) {
-            require "views/student-edit.view.php";
-        }
-    }  else {
-        abort();
-    }
+    require "views/student-edit.view.php";
 ?>

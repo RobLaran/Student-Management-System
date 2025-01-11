@@ -1,5 +1,4 @@
 # TODO
-    - add unenroll function
     - fix data duplication
     - add sort functionality to lists (ascending and descending)
     
@@ -18,6 +17,7 @@
     - on delete cascade that associates with student data
     - construct the profile feature and its design
     - profile: add change password functionality
+    - add unenroll function
 
 
 Queries:

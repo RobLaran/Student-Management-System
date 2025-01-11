@@ -46,7 +46,7 @@ class EnrollmentQueries {
     }
 
     function removeEnrollment($id) {
-        $query = "DELETE FROM enrollemnt 
+        $query = "DELETE FROM enrollment 
                 WHERE enrollment_id = ?";
 
         $params = [$id];

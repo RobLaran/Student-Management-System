@@ -21,6 +21,8 @@
         "/reports" => "controllers/reports.php",
         "/profile" => "controllers/profile.php",
         "/profile/change-password" => "controllers/change-password.php",
+        "/unenroll" => "controllers/unenroll.php",
+        
 
     ];
 
