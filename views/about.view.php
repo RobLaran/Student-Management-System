@@ -7,7 +7,7 @@
     
     require "partials/banner.php";
 ?>
-<main>
+<main class="about-container">
     <p class="paragraph">
         The Student Management System (SMS) is a web-based platform designed to streamline student and course management
         for educational institutions. It simplifies administrative tasks and provides essential insights through

@@ -1,0 +1,120 @@
+.enroll.form-container {
+    width: 420px;
+    height: 260px;
+}
+
+.enroll.form-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.selection-wrapper {
+    display: grid;
+    grid-template-columns: 140px auto;
+    margin-bottom: 10px;
+}
+
+.selection-wrapper select {
+    padding: 4px;
+}
+
+.enroll-button-wrapper {
+    justify-items: center;
+    margin-top: 30px;
+}
+
+#enroll-button {
+    width: 120px;
+    height: 32px;
+}
+
+.unenroll-btn-container {
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.unenroll-btn {
+    font-weight: 700;
+    margin-right: 40px;
+    background-color: rgb(240, 35, 42);
+    border: 1px solid transparent;
+    border-radius: .75rem;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+}
+
+.unenroll-btn:hover {
+    background-color: #8e8f91;
+}
+
+.unenroll-btn:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+    .unenroll-btn {
+        padding: .75rem 1.5rem;
+    }
+}
+
+.unenroll.action-button {
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+    padding: 6px;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+  }
+  
+  .unenroll.action-button {
+    margin-top: 5px;
+    background-color: #f83030;
+  }
+  
+  .unenroll.action-button:hover {
+    background-color: rgba(117, 110, 110, 0.711);
+    transform: scale(1.05);
+  }
+
+.back-btn-container {
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.back-btn {
+    font-weight: 700;
+    margin-left: 40px;
+    background-color: rgb(67, 93, 142);
+    border: 1px solid transparent;
+    border-radius: .75rem;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+}
+
+.back-btn:hover {
+    background-color: #374151;
+}
+
+.back-btn:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+    .back-btn {
+        padding: .75rem 1.5rem;
+    }
+}

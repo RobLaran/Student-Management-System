@@ -1,0 +1,52 @@
+.register.form-container {
+    width: 600px;
+    height: 600px;
+    margin: 20px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.register.form-wrapper {
+    outline: 1px solid #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.grid.form-input-container, .date-gender-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    row-gap: 15px;
+}
+
+.grid.form-input-container {
+    grid-template-columns: 150px auto;
+}
+
+.date-gender-container {
+    margin: 15px 0 25px 0;
+    align-items: center;
+}
+
+.grid.form-input-container input {
+    line-height: 32px;
+}
+
+.register-submit-input{
+    padding: 10px;
+    margin-bottom: 20px
+}
+
+.rdt-login-wrapper {
+    display: grid;
+    align-content: center;
+}
+
+.rdt-login-wrapper label {
+    text-align: center;
+}
