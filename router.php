@@ -19,6 +19,7 @@
         "/courses/edit" => "controllers/course/course-edit.php",
         "/enroll" => "controllers/enroll.php",
         "/reports" => "controllers/reports.php",
+        "/profile" => "controllers/profile.php",
 
     ];
 

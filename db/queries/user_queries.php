@@ -57,10 +57,10 @@ class UserQueries {
         return !empty($result); 
     }
 
-    function fetchUser($username, $email) {
-        $query = "SELECT * FROM user where user_name = ? and email = ?";
+    function fetchUser($id) {
+        $query = "SELECT * FROM user where user_id = ?";
 
-        $result = $this->database->query($query, [$username, $email])->fetch();
+        $result = $this->database->query($query, [$id])->fetch();
 
         return !empty($result) ? $result : NULL;
     }
@@ -81,6 +81,29 @@ class UserQueries {
                 VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         $this->database->query($query, $params);
+    }
+
+    function updateUser($user, $id) {
+        $query = "UPDATE user
+        SET user_name = ?, 
+            email = ?, 
+            phone_number = ?, 
+            date_of_birth = ?, 
+            gender = ?, 
+            address = ?
+        WHERE user_id = ?";
+
+    $params = [
+        $user['user_name'], 
+        $user['email'],
+        $user['phone_number'],
+        $user['date_of_birth'],
+        $user['gender'],
+        $user['address'],
+        $id
+    ];
+
+    return $this->database->query($query, $params);
     }
 }
 ?>

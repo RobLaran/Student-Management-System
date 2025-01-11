@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="/css/register.css">
     <link rel="stylesheet" href="/css/enroll.css">
+    <link rel="stylesheet" href="/css/profile.css">
     <title><?php echo $title;?></title>
 </head>
 <body>
