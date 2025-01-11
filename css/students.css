@@ -1,0 +1,202 @@
+/* 
+* Heading *
+*/
+h1{
+  font-size: 30px;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  height: fit-content;
+}
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* 
+* Styles for the student list page *
+*/
+.table-container {
+    margin-top: 0px;
+    margin-bottom: 50px;
+    padding: 15px;
+}
+
+.table-wrapper {
+    width: 100%;
+    height: 460px;
+    overflow: auto;
+}
+
+.table-wrapper table {
+    width: 100%;
+}
+
+.rd-add-student-container {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.rd-add-student {
+    margin-right: 40px;
+    background-color: rgb(67, 93, 142);
+    border: 1px solid transparent;
+    border-radius: .75rem;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+}
+
+.rd-add-student:hover {
+    background-color: #374151;
+}
+
+.rd-add-student:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+    .rd-add-student {
+        padding: .75rem 1.5rem;
+    }
+}
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* 
+* Styles for main table components *
+*/
+tr.table-header {
+  top: 0;
+  position: sticky;
+  background-color: rgb(67, 93, 142);
+}
+
+th{
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffff;
+  text-transform: uppercase;
+}
+
+tr.table-data:hover {
+  background-color: hsla(60, 100%, 54%, 0.56);
+}
+
+td{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 16px;
+  color: #000;
+  border-bottom: solid 1px rgba(97, 19, 19, 0.252);
+}
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* 
+* Styles for action column's buttons in table *
+*/
+.student.action-button {
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+  padding: 4px;
+  border-radius: 20px;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+}
+
+.student.action-button.edit {
+  background-color: #04AA6D;
+} 
+
+.student.action-button.delete {
+  margin-top: 5px;
+  background-color: #f83030;
+}
+
+.student.action-button:hover {
+  background-color: rgba(117, 110, 110, 0.711);
+  transform: scale(1.05);
+}
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* 
+* Styles for add and edit student page *
+*/
+.student.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.student.form-container {
+    width: 550px;
+    height: 550px;
+    margin-bottom: 20px;
+}
+
+.student.form-wrapper, .add-student-inputs, .edit-student-inputs{
+    display: grid;
+}
+
+.add-student-inputs, .edit-student-inputs {
+    grid-template-columns: 150px auto;
+    row-gap: 15px;
+}
+
+.add-student-inputs input, .edit-student-inputs input {
+    line-height: 32px;
+}
+
+.back-add.student-button-wrapper .back-btn a, .back-edit.student-button-wrapper .back-btn a{
+    text-decoration: none;
+    color: #000;
+}
+
+.back-add.student-button-wrapper .back-btn a:hover, .back-edit.student-button-wrapper .back-btn a:hover {
+    color: #6A64F1;
+}
+
+.back-add.student-button-wrapper, .back-edit.student-button-wrapper {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#add-student-button, #edit-student-button{
+    width: 120px;
+    height: 32px;
+}
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+

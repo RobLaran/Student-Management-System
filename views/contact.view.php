@@ -6,13 +6,13 @@
     $heading = "Contact Us";
     require "partials/banner.php";
 ?>
-<main>
+<main class="contact-container">
     <p class="paragraph">
         Have questions or need assistance? Please feel free to reach out to us. We’d love to hear from you!
     </p>
 
     <h2>Send Us a Message</h2>
-    <form method="POST" action="process_contact.php">
+    <form method="POST" action="process_contact.php" class="form-container">
         <label for="name">Your Name:</label>
         <input type="text" name="name" id="name" required><br><br>
 

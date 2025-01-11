@@ -1,0 +1,34 @@
+.login.form-container {
+    width: 400px;
+    height: 500px;
+    margin: 20px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login.form-wrapper {
+    outline: 1px solid #fff;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    padding: 20px;
+}
+
+.login.form-wrapper input {
+    line-height: 32px;
+}
+
+.login-submit-input {
+    padding: 10px;
+}
+
+.rdt-register-wrapper {
+    display: grid;
+    align-content: center;
+}
+
+.rdt-register-wrapper label {
+    text-align: center;
+}

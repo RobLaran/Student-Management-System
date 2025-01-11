@@ -1,11 +1,9 @@
 <?php 
-require "db/database.php";
-
 class UserAuthentication {
-    public $db;
+    public $query;
 
-    function __construct() {
-        $this->db = new Database();
+    function __construct($userQueries) {
+        $this->query = $userQueries;
     }
 
     /* 
@@ -16,14 +14,14 @@ class UserAuthentication {
     }
 
     function verifyEmail($username, $email) {
-        $id = $this->db->fetchUserID($username, $email);
+        $id = $this->query->fetchUserID($username, $email);
 
         return isset($id);
     }
 
     function checkPassword($username, $email, $password) {
-        $id = $this->db->fetchUserID($username, $email);
-        $hash = $this->db->fetchPassword($id);
+        $id = $this->query->fetchUserID($username, $email);
+        $hash = $this->query->fetchPassword($id);
 
         return $this->verifyPassword($password, $hash);
     }
@@ -33,7 +31,7 @@ class UserAuthentication {
     }
 
     function loginUser($username, $password, $email) {
-        $id = $this->db->fetchUserID($username, $email);
+        $id = $this->query->fetchUserID($username, $email);
 
         return $id;
     }
@@ -46,7 +44,7 @@ class UserAuthentication {
     function checkUsername($username) {
         if(!empty($username)) {
             // check username exists, if exists the user must enter another username 
-            return $this->db->checkUsernameExists($username);
+            return $this->query->checkUsernameExists($username);
         } else {
             return false;
         }
@@ -61,19 +59,30 @@ class UserAuthentication {
         }
     }
 
+    function validateEmail($email) {
+        // Remove all illegal characters from email
+        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+        return filter_var($email, FILTER_VALIDATE_EMAIL);
+    }
+
     function checkEmail($email) {
         if(!empty($email)) {
             # check email exists, if exists the user must enter another email 
-            return $this->db->checkEmailExists($email);
+            return $this->query->checkEmailExists($email);
         } else {
             return false;
         }
     }
 
     function createUser($username="NULL", $password="NULL", $email="NULL", $dateOfBirth="NULL", $phoneNumber="NULL", $gender="NULL", $address="NULL") {
-        $user = array('username'=>$username, 'password'=>$password, 'email'=>$email,
-                        'dateOfBirth'=>$dateOfBirth, 'phoneNumber'=>$phoneNumber, 'gender'=>$gender,
-                        'address'=>$address);
+        $user = array('username'=>$username, 
+                    'password'=>$password, 
+                    'email'=>$email,
+                    'dateOfBirth'=>$dateOfBirth, 
+                    'phoneNumber'=>$phoneNumber, 
+                    'gender'=>$gender,
+                    'address'=>$address);
 
         return $user;
     }
@@ -81,7 +90,7 @@ class UserAuthentication {
     function registerUser($user) {
         $user['password'] = $this->securePassword($user['password']);
 
-        $this->db->addUser($user);
+        $this->query->addUser($user);
     }
 
     function securePassword($password) {
@@ -90,6 +99,4 @@ class UserAuthentication {
         return $hash;
     }
 }
-
-
 ?>
