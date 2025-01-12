@@ -77,6 +77,18 @@ class StudentQueries {
 
         $this->database->query($query, $params);
     }
+
+    function isStudentExist($fname, $lname, $email) {
+        $query = "select * from student 
+            where student_first_name = ? and student_last_name = ?
+            and student_email = ?";
+
+        $params = [$fname, $lname, $email];
+
+        $result = $this->database->query($query, $params)->fetch();
+
+        return !empty($result);
+    }
 }
 
 ?>

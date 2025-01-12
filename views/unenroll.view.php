@@ -38,7 +38,7 @@
                             <td><?= $data['date_enrolled'] ?></td>
                             <td>
                                 <form action="/unenroll" method="GET">
-                                        <button value="<?= $data['enrollment_id'] ?>" name="id" class="unenroll action-button">UNENROLL</button>
+                                        <button  value="<?= $data['enrollment_id'] ?>" name="id" class="unenroll action-button">UNENROLL</button>
                                 </form>
                             </td>
                         </tr>

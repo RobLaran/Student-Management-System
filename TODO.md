@@ -18,6 +18,7 @@
     - construct the profile feature and its design
     - profile: add change password functionality
     - add unenroll function
+    - add a constraint when data already exist
 
 
 Queries:

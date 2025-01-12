@@ -9,7 +9,7 @@ $status = "";
 $error = "";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    
+    // construct the student
     $student = array(
         'First name'=>cleanStr($_POST['first-name']),
         'Last name'=>cleanStr($_POST['last-name']),
@@ -26,6 +26,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error = "";
     }
     
+    // checks if any in the input is empty
     foreach($student as $key=>$value) {
         if($key == "Phone number" || $key == "Address") {
             continue;
@@ -38,6 +39,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
+    // a contraint when a student is already exist
+    // by checking the name and email
+    $isStudentExist = $studentQueries->isStudentExist(
+        $student["First name"],
+        $student["Last name"],
+        $student["Email"]       
+    );
+
+    if($isStudentExist) {
+        $status ="error";
+        $error = "Student already exist.";
+    }
+
+    // add the student to database
     if($status == "added" && empty($error)) {
         $studentQueries->addStudent($student);
     }
