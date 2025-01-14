@@ -14,6 +14,7 @@
     $date_now = date("Y-m-d");
 
     $status = "";
+    $error = "";
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         $enrollment = array(
@@ -25,8 +26,13 @@
         );
 
         foreach($enrollment as $key=>$val) {
-            if(empty($val))
-            $status = "error";
+            $status ="error";
+            $error = "Fill out the form.";
+        }
+
+        if($enrollQueries->isEnrolled($enrollment['course_code'], $enrollment['student_id'])) {
+            $status ="error";
+            $error = "Student is already enrolled.";
         }
 
         if($enrollment && $status != "error") {

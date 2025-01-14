@@ -53,6 +53,18 @@ class EnrollmentQueries {
 
         $this->database->query($query, $params);
     }
+
+    function isEnrolled($course_code, $student_id) {
+        $query = "SELECT * from enrollment 
+            WHERE course_code = ? and student_id = ?;
+        ";
+
+        $params = [$course_code, $student_id];
+
+        $result = $this->database->query($query, $params)->fetch();
+
+        return !empty($result);
+    }
 }
 
 ?>

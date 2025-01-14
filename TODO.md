@@ -1,7 +1,4 @@
 # TODO
-    - add a constraint when data already exist
-        <!-- - add constraint to course -->
-        - add constriant to enrollment
     - fix data duplication
     - add sort functionality to lists (ascending and descending)
     
@@ -21,6 +18,7 @@
     - construct the profile feature and its design
     - profile: add change password functionality
     - add unenroll function
+    - add a constraint when data already exist
 
 
 Queries:

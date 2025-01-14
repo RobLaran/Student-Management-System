@@ -14,7 +14,7 @@
 <?php if($status == "error"): ?>
     <div class="alert" style="background-color: #f44336;">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-        <strong>Error!</strong> Fill out the form.
+        <strong>Error!</strong> <?= $error ?>
     </div>
 <?php endif ?>
 
