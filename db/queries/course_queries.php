@@ -60,6 +60,18 @@ class CourseQueries {
 
         $this->database->query($query, $params);
     }
+
+    function isCourseExist($course_name) {
+        $query = "SELECT * from course 
+            WHERE course_name = ?;
+        ";
+
+        $params = [$course_name];
+
+        $result = $this->database->query($query, $params)->fetch();
+
+        return !empty($result);
+    }
 }
 
 ?>

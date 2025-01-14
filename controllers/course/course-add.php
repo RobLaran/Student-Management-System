@@ -17,13 +17,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(empty($course_name)) {
         $status = "error";
         $error = "Course name required.";
+    } else if($courseQueries->isCourseExist($course_name)) {
+        $status = "error";
+        $error = "Course already added.";
     } else {
         $new_course = array(
             "course_name"=>$course_name,
             "description"=>$description
         );
     
-        $courseQueries->addCourse($new_course);
+        // $courseQueries->addCourse($new_course);
         $status = "added";
     }
 

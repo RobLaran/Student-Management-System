@@ -1,6 +1,6 @@
 # TODO
     - add a constraint when data already exist
-        - add constraint to course
+        <!-- - add constraint to course -->
         - add constriant to enrollment
     - fix data duplication
     - add sort functionality to lists (ascending and descending)
