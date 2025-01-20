@@ -3,6 +3,7 @@
     require "partials/head.php";
     require "partials/nav.php";
 ?>
+
 <main class="courses-table-container">
     <h1>Course List</h1>
     <div class="courses-table-wrapper">

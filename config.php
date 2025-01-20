@@ -1,11 +1,11 @@
 <?php
 
-return [
-    'database' => [
-        'host' => 'localhost',
-        'port' => '3306',
-       'dbname' => 'sms_db'
-    ]
-];
+    return [
+        'database' => [
+            'host' => 'localhost',
+            'port' => '3306',
+        'dbname' => 'sms_db'
+        ]
+    ];
 
 ?>

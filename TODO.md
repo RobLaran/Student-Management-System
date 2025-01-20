@@ -1,6 +1,6 @@
 # TODO
-    - fix data duplication
-    - add sort functionality to lists (ascending and descending)
+    - add sort functionality to tables (ascending and descending)
+    - can search data in each feature 
     
 # DONE
     - implemented user registration

@@ -3,15 +3,16 @@
     require "partials/head.php";
     require "partials/nav.php";
 ?>
+
 <main class="table-container">
     <h1>Student List</h1>
     <div class="table-wrapper">
         <table>
             <thead>
                 <tr class="table-header">
-                    <th>Student ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th><a href="?column=student_id&order=<?= $next_order ?>">Student ID</a></th>
+                    <th><a href="?column=student_first_name&order=<?= $next_order ?>">First Name</a></th>
+                    <th><a href="?column=student_last_name&order=<?= $next_order ?>">Last Name</a></th>
                     <th>Email</th>
                     <th>Date of birth</th>
                     <th>Phone number</th>

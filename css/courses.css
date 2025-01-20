@@ -178,3 +178,10 @@ tr.course-table-header {
   width: 120px;
   height: 32px;
 }
+
+
+#sort {
+  width: 40px;
+  margin: 20px;
+  padding: 5px;
+}

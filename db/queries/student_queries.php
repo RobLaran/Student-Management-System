@@ -14,6 +14,21 @@ class StudentQueries {
         return !empty($result) ? $result : null; 
     }
 
+    function fetchAllOrderBy($column, $order) {
+        $query = "SELECT * FROM student ORDER BY ? ?";
+
+        $params = [
+            $column,
+            $order
+        ];
+
+        $result = $this->database->query($query, $params)->fetchAll();
+
+        return !empty($result) ? $result : null; 
+    }
+
+    
+
     function fetchStudent($id) {
         $query = "SELECT * FROM student where student_id = ?";
 
