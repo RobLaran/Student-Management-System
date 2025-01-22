@@ -15,6 +15,33 @@
     }
 
     function isURL($URL) {
-        return $_SERVER['REQUEST_URI'] == $URL;
+        $PATH = parse_url($_SERVER['REQUEST_URI'])['path'];
+
+        return $PATH == $URL;
+    }
+
+    function orderBy($db, $column, $order, $columns=[], $table="") {
+        $allowed_column = $columns;
+        $allowed_order = ["ASC", "DESC"];
+
+        if(!in_array($column, $allowed_column)) {
+            $column = $columns[0];
+        }
+
+        if(!in_array($order, $allowed_order)) {
+            $order = "ASC";
+        }
+
+        if(!empty($column) && !empty($order)) {
+            if($order == "ASC") {
+                $statement = $db->query("SELECT * FROM {$table} ORDER BY {$column} ASC");
+            } else {
+                $statement = $db->query("SELECT * FROM {$table} ORDER BY {$column} DESC");
+            }
+
+            $result = $statement->fetchAll();
+        }
+
+        return $result;
     }
 ?>
