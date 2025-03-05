@@ -10,13 +10,13 @@
         <table>
             <thead>
                 <tr class="table-header">
-                    <th>Student Last Name</th>
-                    <th>Student First Name</th>
-                    <th>Email Address</th>
-                    <th>Courses</th>
-                    <th>Year</th>
-                    <th>Semester</th>
-                    <th>Date Enrolled</th>
+                    <th><a href="?column=student_last_name&order=<?= $next_order ?>">Student Last Name</a></th>
+                    <th><a href="?column=student_first_name&order=<?= $next_order ?>">Student First Name</a></th>
+                    <th class="sortable">Email Address</th>
+                    <th class="sortable">Courses</th>
+                    <th class="sortable">Year</th>
+                    <th class="sortable">Semester</th>
+                    <th class="sortable">Date Enrolled</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -24,15 +24,10 @@
             <?php if(!empty($enrollments)): ?>
                     <?php foreach($enrollments as $data): ?>
                         <tr class="table-data">
-                            <?php 
-                                $student = $studentQueries->fetchStudent($data['student_id']);
-                                $course = $courseQueries->fetchCourse($data['course_code']);
-                            ?>
-
-                            <td><?= $student['student_first_name'] ?></td>
-                            <td><?= $student['student_last_name'] ?></td>
-                            <td><?= $student['student_email']?></td>
-                            <td><?= $course['course_name'] ?></td>
+                            <td><?= $data['student_last_name'] ?></td>
+                            <td><?= $data['student_first_name'] ?></td>
+                            <td><?= $data['student_email']?></td>
+                            <td><?= $data['course_name'] ?></td>
                             <td><?= $data['year'] ?></td>
                             <td><?= $data['semester'] ?></td>
                             <td><?= $data['date_enrolled'] ?></td>

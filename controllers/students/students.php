@@ -5,12 +5,13 @@
     $db = new Database('root', 'darting1223', $config['database']);
     $studentQuery = new StudentQueries($db);
 
-    $column = $_GET["column"] ?? "student_id";
-    $order = $_GET["order"] ?? "ASC";
+    $column = $_GET["column"] ?? "id";
+    $order = $_GET["order"] ?? "asc";
+    $table = "student" . $column . "view_" . $order;
 
-    $students = orderBy($db, $column, $order, ["student_id", "student_first_name", "student_last_name"], "student") ?? $studentQuery->fetchAll();
+    $students = $studentQuery->fetchAllOrderBy($table);
 
-    $next_order = ($order === 'ASC') ? 'DESC' : 'ASC';
+    $next_order = ($order === 'asc') ? 'desc' : 'asc';
     
     require "views/students.view.php";
 ?>

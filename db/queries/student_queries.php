@@ -14,15 +14,18 @@ class StudentQueries {
         return !empty($result) ? $result : null; 
     }
 
-    function fetchAllOrderBy($column, $order) {
-        $query = "SELECT * FROM student ORDER BY ? ?";
+    function fetchAllOrderBy($table) {
+        $allowedTables = ["studentidview_asc", "studentidview_desc",
+                          "studentfirstnameview_asc", "studentfirstnameview_desc",
+                          "studentlastnameview_asc", "studentlastnameview_desc"];
 
-        $params = [
-            $column,
-            $order
-        ];
+        if(!in_array($table, $allowedTables)) {
+            throw new Exception("Invalid table name.");
+        }
 
-        $result = $this->database->query($query, $params)->fetchAll();
+        $query = "SELECT * FROM $table";
+
+        $result = $this->database->query($query)->fetchAll();
 
         return !empty($result) ? $result : null; 
     }

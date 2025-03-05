@@ -10,9 +10,9 @@
         <table>
             <thead>
                 <tr class="table-header">
-                    <th><a href="?column=student_id&order=<?= $next_order ?>">Student ID</a></th>
-                    <th><a href="?column=student_first_name&order=<?= $next_order ?>">First Name</a></th>
-                    <th><a href="?column=student_last_name&order=<?= $next_order ?>">Last Name</a></th>
+                    <th><a href="?column=id&order=<?= $next_order ?>">Student ID</a></th>
+                    <th><a href="?column=firstname&order=<?= $next_order ?>">First Name</a></th>
+                    <th><a href="?column=lastname&order=<?= $next_order ?>">Last Name</a></th>
                     <th>Email</th>
                     <th>Date of birth</th>
                     <th>Phone number</th>

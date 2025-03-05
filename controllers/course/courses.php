@@ -6,7 +6,7 @@
     $courseQuery = new CourseQueries($db);
 
     $column = $_GET["column"] ?? "course_code";
-    $order = $_GET["order"] ?? "ASC";
+    $order = $_GET["orderby"] ?? "ASC";
 
     $courses = orderBy($db, $column, $order, ["course_code", "course_name"], "course") ?? $courseQuery->fetchAll();
 

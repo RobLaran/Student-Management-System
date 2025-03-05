@@ -10,8 +10,8 @@
         <table>
             <thead>
                 <tr class="course-table-header">
-                    <th><a href="?column=course_code&order=<?= $next_order ?>">Course code</a></th>
-                    <th><a href="?column=course_name&order=<?= $next_order ?>">Course name</a></th>
+                    <th><a href="?column=course_code&orderby=<?= $next_order ?>">Course code</a></th>
+                    <th><a href="?column=course_name&orderby=<?= $next_order ?>">Course name</a></th>
                     <th>Description</th>
                     <th>Action</th>
                 </tr>

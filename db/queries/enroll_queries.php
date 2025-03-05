@@ -65,6 +65,21 @@ class EnrollmentQueries {
 
         return !empty($result);
     }
+
+    function fetchAllOrderBy($column, $order) {
+        $columns = ["student_last_name", "student_first_name"];
+        $orders = ["ASC", "DESC"];
+
+        if(!in_array($column, $columns) || !in_array($order, $orders)) {
+            throw new Exception("Invalid column or order");
+        }
+
+        $query = "SELECT * FROM enrollment_view ORDER BY $column $order";
+
+        $result = $this->database->query($query)->fetchAll();
+
+        return !empty($result) ? $result : null; 
+    }
 }
 
 ?>

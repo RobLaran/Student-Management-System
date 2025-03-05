@@ -5,11 +5,14 @@
     $config = require "config.php";
     
     $db = new Database('root', 'darting1223', $config['database']);
-    $studentQueries = new StudentQueries($db);
-    $courseQueries = new CourseQueries($db);
     $enrollQueries = new EnrollmentQueries($db);
+    
+    $column = $_GET["column"] ?? "student_last_name";
+    $order = $_GET["order"] ?? "ASC";
+    
+    $enrollments = $enrollQueries->fetchAllOrderBy($column, $order);
 
-    $enrollments = $enrollQueries->fetchAll();
+    $next_order = ($order === 'ASC') ? 'DESC' : 'ASC';
 
     require "views/reports..view.php";
 ?>
